@@ -10,6 +10,8 @@ var base = path.join(__dirname, '..', '..');
 
 var intro = fs.readFileSync(path.join(base, 'docs', 'intro.md'));
 
+var outro = fs.readFileSync(path.join(base, 'docs', 'outro.md'));
+
 var options = modernizr.options(undefined, true);
 
 
@@ -79,5 +81,5 @@ marked.setOptions({
 });
 
 module.exports = function() {
-  return marked(intro + parsedDocs);
+  return marked(intro + parsedDocs + outro);
 };
